@@ -50,14 +50,17 @@ export default {
   // },
   methods:{
     postValue(){
+      let self= this;
+      console.log('rrr');
       axios.post('http://localhost:8000/api/users',{
-        name: this.name,
-        phone: this.phone,
-        email: this.email,
-        image_url: this.image_url
+        name: self.name,
+        phone: self.phone,
+        email: self.email,
+        image_url: self.image_url
       }
     ) .then(function (response) {
         console.log(response);
+        console.log(self.name);
       })
       .catch(function (error) {
         console.log(error);
