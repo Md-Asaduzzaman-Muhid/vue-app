@@ -24,9 +24,11 @@
     <input type="text" id="defaultFormContactImageURLEx" class="form-control" name="image_url" v-model="image_url">
 
     <br>
+    <!-- <label for="defaultFormContactImageURLtEx" class="grey-text">Image </label>
+    <input type="file" @change= "onFileSelected"> -->
 
     <div class="text-center mt-4">
-        <button class="btn btn-outline-warning" type="submit">Send Value<i class="far fa-paper-plane ml-2"></i></button>
+        <button class="btn btn-outline-warning" type="submit">Send Value<i class="far fa-paper-plane ml-2" v-on:click="resetForm"></i></button>
     </div>
   </form>
   <!-- Default form contact -->
@@ -38,6 +40,7 @@ import axios from 'axios';
 export default {
   name: 'HomeFrom',
   data(){
+    
     return{
       name: '',
       phone: '',
@@ -51,20 +54,29 @@ export default {
   methods:{
     postValue(){
       let self= this;
-      console.log('rrr');
+      //console.log('rrr');
       axios.post('http://localhost:8000/api/users',{
         name: self.name,
         phone: self.phone,
         email: self.email,
-        image_url: self.image_url
+        image_url: self.image_url,
+        
       }
+      
+
     ) .then(function (response) {
         console.log(response);
-        console.log(self.name);
+      
       })
       .catch(function (error) {
         console.log(error);
       });
+    },
+    resetForm: function() {
+        self.name= '',
+        self.phone= '',
+        self.email= '',
+        self.image_url= ''
     }
   }
 }

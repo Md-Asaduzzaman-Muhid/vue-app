@@ -3,17 +3,19 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue App"/> -->
     <HomeForm />
+    <UserList />
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import HomeForm from './components/HomeForm.vue'
+import UserList from './components/UserList.vue'
 
 export default {
   name: 'form-section',
   components: {
-    HomeForm
+    HomeForm,UserList
   }
 }
 </script>
