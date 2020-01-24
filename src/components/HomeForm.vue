@@ -72,11 +72,8 @@ export default {
         console.log(error);
       });
     },
-    resetForm: function() {
-        self.name= '',
-        self.phone= '',
-        self.email= '',
-        self.image_url= ''
+    resetForm: function(response) {
+        response.target.reset()
     }
   }
 }
