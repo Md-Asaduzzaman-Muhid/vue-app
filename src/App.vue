@@ -1,7 +1,6 @@
 <template>
   <div id="form-section">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue App"/> -->
+    <ValidateForm />
     <HomeForm />
     <UserList />
   </div>
@@ -11,11 +10,12 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import HomeForm from './components/HomeForm.vue'
 import UserList from './components/UserList.vue'
+import ValidateForm from './components/ValidateForm.vue'
 
 export default {
   name: 'form-section',
   components: {
-    HomeForm,UserList
+    HomeForm,UserList,ValidateForm
   }
 }
 </script>

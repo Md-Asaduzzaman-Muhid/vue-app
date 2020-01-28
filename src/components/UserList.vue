@@ -13,7 +13,7 @@ export default {
   },
   data(){
    //result: null 
-    return{
+    return{ 
       result: []
     }
   }, 
